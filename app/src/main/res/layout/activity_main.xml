@@ -1,0 +1,645 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/whiteThird"
+    tools:context=".activity.MainActivity"
+    tools:ignore="Overdraw">
+
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:scrollbars="none"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:id="@+id/relative_layout"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:gravity="center"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ToggleButton
+                    android:id="@+id/btn_menu"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/transparent"
+                    android:textOff=""
+                    android:textOn="" />
+
+                <ImageView
+                    android:id="@+id/iv_menu"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/ic_menu"
+                    android:contentDescription="@string/todo" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/line_lay_check_conn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/title">
+
+                <ImageView
+                    android:id="@+id/iv_test_conn"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_marginEnd="10dp"
+                    android:contentDescription="@string/todo"
+                    tools:src="@drawable/ic_connect" />
+
+                <TextView
+                    android:id="@+id/tv_test_conn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/mlight"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="14sp"
+                    tools:text="Connected" />
+
+                <ImageView
+                    android:id="@+id/iv_test_dev"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_marginStart="10dp"
+                    android:contentDescription="@string/todo"
+                    android:src="@drawable/ic_device" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/ly_switch2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/line_lay_check_conn">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="32dp"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/mmedium"
+                            android:text="@string/main_switch_1"
+                            android:textAlignment="center"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:textSize="16sp" />
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <ToggleButton
+                                android:id="@+id/tb_relay1"
+                                android:layout_width="100dp"
+                                android:layout_height="100dp"
+                                android:layout_marginStart="0dp"
+                                android:layout_marginTop="0dp"
+                                android:layout_marginEnd="0dp"
+                                android:layout_marginBottom="0dp"
+                                android:background="@android:color/transparent"
+                                android:textOff=""
+                                android:textOn="" />
+
+
+                            <soup.neumorphism.NeumorphImageButton
+                                android:id="@+id/nue_flat_1"
+                                style="@style/Widget.Neumorph.ImageButton"
+                                android:layout_width="100dp"
+                                android:layout_height="100dp"
+                                android:layout_marginStart="0dp"
+                                android:layout_marginTop="0dp"
+                                android:layout_marginEnd="0dp"
+                                android:clickable="false"
+                                android:scaleType="centerInside"
+                                android:src="@drawable/ic_switch"
+                                app:neumorph_shapeType="flat" />
+
+
+                            <soup.neumorphism.NeumorphImageButton
+                                android:id="@+id/neu_pressed_1"
+                                style="@style/Widget.Neumorph.ImageButton"
+                                android:layout_width="100dp"
+                                android:layout_height="100dp"
+                                android:layout_marginStart="0dp"
+                                android:layout_marginTop="0dp"
+                                android:layout_marginEnd="0dp"
+                                android:layout_marginBottom="0dp"
+                                android:clickable="false"
+                                android:scaleType="centerInside"
+                                android:src="@drawable/ic_switch_pressed"
+                                app:neumorph_shapeType="basin" />
+
+
+                        </RelativeLayout>
+
+                        <TextView
+                            android:id="@+id/tv_relay_1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/mmedium"
+                            android:lineSpacingExtra="4dp"
+                            android:textAlignment="center"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:textSize="16sp"
+                            tools:text="On" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/mmedium"
+                            android:text="@string/main_switch_2"
+                            android:textAlignment="center"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:textSize="16sp" />
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <ToggleButton
+                                android:id="@+id/tb_relay2"
+                                android:layout_width="100dp"
+                                android:layout_height="100dp"
+                                android:layout_marginStart="0dp"
+                                android:layout_marginTop="0dp"
+                                android:layout_marginEnd="0dp"
+                                android:layout_marginBottom="0dp"
+                                android:background="@android:color/transparent"
+                                android:textOff=""
+                                android:textOn="" />
+
+
+                            <soup.neumorphism.NeumorphImageButton
+                                android:id="@+id/nue_flat_2"
+                                style="@style/Widget.Neumorph.ImageButton"
+                                android:layout_width="100dp"
+                                android:layout_height="100dp"
+                                android:layout_marginStart="0dp"
+                                android:layout_marginTop="0dp"
+                                android:layout_marginEnd="0dp"
+                                android:layout_marginBottom="0dp"
+                                android:clickable="false"
+                                android:scaleType="centerInside"
+                                android:src="@drawable/ic_switch"
+                                app:neumorph_shapeType="flat" />
+
+
+                            <soup.neumorphism.NeumorphImageButton
+                                android:id="@+id/neu_pressed_2"
+                                style="@style/Widget.Neumorph.ImageButton"
+                                android:layout_width="100dp"
+                                android:layout_height="100dp"
+                                android:layout_marginStart="0dp"
+                                android:layout_marginTop="0dp"
+                                android:layout_marginEnd="0dp"
+                                android:layout_marginBottom="0dp"
+                                android:clickable="false"
+                                android:scaleType="centerInside"
+                                android:src="@drawable/ic_switch_pressed"
+                                app:neumorph_shapeType="basin" />
+
+
+                        </RelativeLayout>
+
+                        <TextView
+                            android:id="@+id/tv_relay_2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/mmedium"
+                            android:lineSpacingExtra="4dp"
+                            android:textAlignment="center"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:textSize="16sp"
+                            tools:text="On" />
+
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="50dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="32dp"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/mmedium"
+                            android:text="@string/main_switch_3"
+                            android:textAlignment="center"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:textSize="16sp" />
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <ToggleButton
+                                android:id="@+id/tb_relay3"
+                                android:layout_width="100dp"
+                                android:layout_height="100dp"
+                                android:layout_marginStart="0dp"
+                                android:layout_marginTop="0dp"
+                                android:layout_marginEnd="0dp"
+                                android:layout_marginBottom="0dp"
+                                android:background="@android:color/transparent"
+                                android:textOff=""
+                                android:textOn="" />
+
+
+                            <soup.neumorphism.NeumorphImageButton
+                                android:id="@+id/nue_flat_3"
+                                style="@style/Widget.Neumorph.ImageButton"
+                                android:layout_width="100dp"
+                                android:layout_height="100dp"
+                                android:layout_marginStart="0dp"
+                                android:layout_marginTop="0dp"
+                                android:layout_marginEnd="0dp"
+                                android:layout_marginBottom="0dp"
+                                android:clickable="false"
+                                android:scaleType="centerInside"
+                                android:src="@drawable/ic_switch"
+                                app:neumorph_shapeType="flat" />
+
+
+                            <soup.neumorphism.NeumorphImageButton
+                                android:id="@+id/neu_pressed_3"
+                                style="@style/Widget.Neumorph.ImageButton"
+                                android:layout_width="100dp"
+                                android:layout_height="100dp"
+                                android:layout_marginStart="0dp"
+                                android:layout_marginTop="0dp"
+                                android:layout_marginEnd="0dp"
+                                android:layout_marginBottom="0dp"
+                                android:clickable="false"
+                                android:scaleType="centerInside"
+                                android:src="@drawable/ic_switch_pressed"
+                                app:neumorph_shapeType="basin" />
+
+
+                        </RelativeLayout>
+
+                        <TextView
+                            android:id="@+id/tv_relay_3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/mmedium"
+                            android:lineSpacingExtra="4dp"
+                            android:textAlignment="center"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:textSize="16sp"
+                            tools:text="On" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/mmedium"
+                            android:text="@string/main_switch_4"
+                            android:textAlignment="center"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:textSize="16sp" />
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <ToggleButton
+                                android:id="@+id/tb_relay4"
+                                android:layout_width="100dp"
+                                android:layout_height="100dp"
+                                android:layout_marginStart="0dp"
+                                android:layout_marginTop="0dp"
+                                android:layout_marginEnd="0dp"
+                                android:layout_marginBottom="0dp"
+                                android:background="@android:color/transparent"
+                                android:textOff=""
+                                android:textOn="" />
+
+
+                            <soup.neumorphism.NeumorphImageButton
+                                android:id="@+id/nue_flat_4"
+                                style="@style/Widget.Neumorph.ImageButton"
+                                android:layout_width="100dp"
+                                android:layout_height="100dp"
+                                android:layout_marginStart="0dp"
+                                android:layout_marginTop="0dp"
+                                android:layout_marginEnd="0dp"
+                                android:layout_marginBottom="0dp"
+                                android:clickable="false"
+                                android:scaleType="centerInside"
+                                android:src="@drawable/ic_switch"
+                                app:neumorph_shapeType="flat" />
+
+
+                            <soup.neumorphism.NeumorphImageButton
+                                android:id="@+id/neu_pressed_4"
+                                style="@style/Widget.Neumorph.ImageButton"
+                                android:layout_width="100dp"
+                                android:layout_height="100dp"
+                                android:layout_marginStart="0dp"
+                                android:layout_marginTop="0dp"
+                                android:layout_marginEnd="0dp"
+                                android:layout_marginBottom="0dp"
+                                android:clickable="false"
+                                android:scaleType="centerInside"
+                                android:src="@drawable/ic_switch_pressed"
+                                app:neumorph_shapeType="basin" />
+
+
+                        </RelativeLayout>
+
+                        <TextView
+                            android:id="@+id/tv_relay_4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/mmedium"
+                            android:lineSpacingExtra="4dp"
+                            android:textAlignment="center"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:textSize="16sp"
+                            tools:text="On" />
+
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+            <TextView
+                android:id="@+id/tv_voice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="280dp"
+                android:fontFamily="@font/mregular"
+                android:lineSpacingExtra="4dp"
+                android:textAlignment="center"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.538"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ly_switch2"
+                tools:text="Semua lampu padam" />
+
+            <LinearLayout
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:gravity="center"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/relative_layout">
+
+                <soup.neumorphism.NeumorphTextView
+                    style="@style/Widget.Neumorph.TextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/mbold"
+                    android:text="@string/main_title_home"
+                    android:textAlignment="center"
+                    android:textColor="@color/whiteThird"
+                    android:textSize="36sp" />
+
+                <soup.neumorphism.NeumorphTextView
+                    android:id="@+id/neumorphTextView2"
+                    style="@style/Widget.Neumorph.TextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="-4dp"
+                    android:fontFamily="@font/mbold"
+                    android:text="@string/main_title_controller"
+                    android:textAlignment="center"
+                    android:textColor="@color/whiteThird"
+                    android:textSize="36sp" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_ping"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:paddingLeft="@dimen/range_16dp"
+                android:paddingRight="@dimen/range_16dp"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_voice"
+                tools:text="Ping 8.8.8.8" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="88dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="24dp"
+        android:layout_marginBottom="36dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ToggleButton
+                android:id="@+id/tb_all_relay"
+                android:layout_width="match_parent"
+                android:layout_height="88dp"
+                android:background="@android:color/transparent"
+                android:textOff=""
+                android:textOn="" />
+
+
+            <soup.neumorphism.NeumorphFloatingActionButton
+                android:id="@+id/nue_flat_all"
+                style="@style/Widget.Neumorph.FloatingActionButton"
+                android:layout_width="match_parent"
+                android:layout_height="88dp"
+                android:clickable="false"
+                android:scaleType="centerInside"
+                android:src="@drawable/ic_switch"
+                app:neumorph_shapeType="flat" />
+
+
+            <soup.neumorphism.NeumorphFloatingActionButton
+                android:id="@+id/neu_pressed_all"
+                style="@style/Widget.Neumorph.FloatingActionButton"
+                android:layout_width="match_parent"
+                android:layout_height="88dp"
+                android:clickable="false"
+                android:scaleType="centerInside"
+                android:src="@drawable/ic_switch_pressed"
+                app:neumorph_shapeType="basin" />
+
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/mmedium"
+                android:text="@string/main_help_all"
+                android:textAlignment="center"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/tv_relay_all"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:fontFamily="@font/mmedium"
+                android:lineSpacingExtra="4dp"
+                android:textAlignment="center"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="16sp"
+                tools:text="On" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="36dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <soup.neumorphism.NeumorphFloatingActionButton
+            android:id="@+id/btn_voice_mode"
+            style="@style/Widget.Neumorph.FloatingActionButton"
+            android:layout_width="88dp"
+            android:layout_height="88dp"
+            android:layout_gravity="center"
+            android:clickable="true"
+            android:focusable="true"
+            android:scaleType="centerInside"
+            android:src="@drawable/ic_mic"
+            app:neumorph_shapeAppearance="@style/CustomShapeAppearance" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/mmedium"
+            android:gravity="center"
+            android:text="@string/main_voice_mode"
+            android:textAlignment="center"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+
+    <include
+        android:id="@+id/help_ly_disconnected"
+        layout="@layout/layout_disconnect"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

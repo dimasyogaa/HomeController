@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Home Controller</string>
+
+
+    <string name="timeout">** Timeout **</string>
+
+
+    <!--On Activity Login & Contact Us-->
+    <string name="login_need_help">Butuh bantuan?</string>
+    <string name="login_qr_code_doesnt_match">Kode QR tidak cocok</string>
+    <string name="login_no_result_found">Hasil tidak ditemukan</string>
+    <string name="login_main_connecting">Menghubungkan....</string>
+    <string name="login_scan_qr_code">Pindai kode QR</string>
+    <string name="login_point_the_camera_at_your_qr_code">Arahkan kamera pada kode QR anda</string>
+    <string name="contact_title_contact">CONTACT</string>
+    <string name="contact_text_content">Jika Anda membutuhkan bantuan, silakan hubungi kami dengan mengklik tombol di bawah ini</string>
+    <string name="login_contact_us_email_us">Email kami</string>
+    <string name="login_contact_us_please_wait_a_moment">Mohon tunggu sebentar…</string>
+    <string name="login_contact_us_send_email">Kirim email…</string>
+    <string name="login_contact_us_catch_no_email">Tidak ada email yang terpasang</string>
+
+    <!--On Activity Main-->
+    <string name="main_title_home">HOME</string>
+    <string name="main_title_controller">CONTROLLER</string>
+    <string name="main_help_connected">Terhubung</string>
+    <string name="main_help_disconnected">Terputus</string>
+    <string name="main_switch_1">Sakelar 1</string>
+    <string name="main_switch_2">Sakelar 2</string>
+    <string name="main_switch_3">Sakelar 3</string>
+    <string name="main_switch_4">Sakelar 4</string>
+    <string name="main_on">On</string>
+    <string name="main_off">Off</string>
+    <string name="main_help_all">Semua</string>
+    <string name="main_voice_mode">Mode Suara</string>
+    <string name="main_dont_support_voice_mode">Perangkat Anda Tidak Mendukung Input Ucapan</string>
+    <string name="main_ly_disconnected_content">Internet tidak tersedia, periksa kembali konektivitas internet Anda dan coba lagi</string>
+    <string name="main_toast_switch">Sakelar</string>
+    <string name="main_toast_success_active">berhasil diaktifkan</string>
+    <string name="main_toast_failed_active">gagal diaktifkan</string>
+    <string name="main_toast_success_nonactive">berhasil dinonaktifkan</string>
+    <string name="main_toast_failed_nonactive">gagal dinonaktifkan</string>
+    <string name="main_toast_all_active">Semua sakelar berhasil diaktifkan</string>
+    <string name="main_toast_all_nonactive">Semua sakelar berhasil dinonaktifkan</string>
+    <string name="main_toast_unknown_command">Perintah tidak diketahui</string>
+    <string name="todo">TODO</string>
+
+    <!--On Activity Help-->
+    <string name="help_title_help">HELP</string>
+    <string name="help_connection">KONEKSI</string>
+    <string name="help_device">Perangkat</string>
+    <string name="help_device_content">Jika device(ESP) berhasil terhubung jaringan internet dan aktif, maka tanda kuning akan muncul dan terus berkedip dengan delay waktu yang berbeda bergantung pada kecepatanjaringan internet.</string>
+    <string name="help_device_content_2">Namun jika tanda kuning tidak muncul dan tidak berkedip dalam waktu yang relatif lama hingga 2 menit, maka menandakan device(ESP) tidak aktif dan tidak terhubung jaringan internet.</string>
+    <string name="help_footer_content">Aplikasi dan Device\nmemerlukan jaringan internet\nagar bisa bekerja dengan optimal.</string>
+    <string name="help_disconnected_content">Jika Aplikasi ini gagal terhubung jaringan internet, maka tanda merah akan tampil.</string>
+    <string name="help_connected_content">Jika Aplikasi ini berhasil terhubung jaringan internet, maka tanda hijau akan tampil.</string>
+    <string name="help_voice_mode_command">PERINTAH\MODE SUARA</string>
+    <string name="help_command_to_disable_the_switch">Menonaktifkan sakelar</string>
+    <string name="help_command_to_activate_the_switch">Mengaktifkan sakelar</string>
+    <string name="help_sayings_example">Contoh ucapan : sakelar satu aktif</string>
+    <string name="help_keyword_specific_active">Sakelar (nomor sakelar) aktif</string>
+    <string name="help_specific">Specific</string>
+    <string name="help_example_content_active">Sakelar satu aktif</string>
+    <string name="help_keyword_all_active">Semua sakelar aktif</string>
+    <string name="help_keyword_all_nonactive">Semua sakelar nonaktif</string>
+    <string name="help_keyword_specific_nonactive">Sakelar (nomor sakelar) nonaktif</string>
+    <string name="help_example_content_nonactive">Sakelar satu nonaktif</string>
+
+    <!--Menu Option -->
+    <string name="menu_contact_us">Hubungi Kami</string>
+    <string name="menu_help">Bantuan</string>
+    <string name="menu_language">Bahasa</string>
+    <string name="contact_copyright_2020">2020</string>
+    <string name="timer">Pewaktu</string>
+
+
+    <string name="msg_notification_switch_on_1">Sakelar 1 Aktif</string>
+    <string name="msg_notification_switch_off_1">Sakelar 1 Nonaktif</string>
+    <string name="msg_notification_switch_on_2">Sakelar 2 Aktif</string>
+    <string name="msg_notification_switch_off_2">Sakelar 2 Nonaktif</string>
+    <string name="msg_notification_switch_on_3">Sakelar 3 Aktif</string>
+    <string name="msg_notification_switch_off_3">Sakelar 3 Nonaktif</string>
+    <string name="msg_notification_switch_on_4">Sakelar 4 Aktif</string>
+    <string name="msg_notification_switch_off_4">Sakelar 4 Nonaktif</string>
+
+    <string name="msg_timer_empty">Waktu belum ditentukan, harap atur waktu terlebih dahulu</string>
+    <string name="msg_notification_service">Pewaktu sedang berjalan</string>
+
+    <string name="msg_timer_switch_1">Pewaktu untuk sakelar 1 diaktifkan</string>
+    <string name="msg_timer_switch_2">Pewaktu untuk sakelar 2 diaktifkan</string>
+    <string name="msg_timer_switch_3">Pewaktu untuk sakelar 3 diaktifkan</string>
+    <string name="msg_timer_switch_4">Pewaktu untuk sakelar 4 diaktifkan</string>
+
+    <string name="msg_timer_switch_1_disabled">Pewaktu untuk sakelar 1 dinonaktifkan</string>
+    <string name="msg_timer_switch_2_disabled">Pewaktu untuk sakelar 2 dinonaktifkan</string>
+    <string name="msg_timer_switch_3_disabled">Pewaktu untuk sakelar 3 dinonaktifkan</string>
+    <string name="msg_timer_switch_4_disabled">Pewaktu untuk sakelar 4 dinonaktifkan</string>
+
+    <string name="timer_title_timer">TIMER</string>
+    <string name="timer_active_at">Aktif pukul</string>
+    <string name="timer_off_at">Nonaktif pukul</string>
+    <string name="timer_warning_text">Menggunakan fitur ini akan menguras baterai anda</string>
+
+</resources>

@@ -1,0 +1,39 @@
+<resources>
+    <!--    Base application theme.-->
+
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+
+    </style>
+
+
+    <style name="MenuTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="fontFamily">@font/mregular</item>
+        <item name="android:textColor">@color/colorPrimaryDark</item>
+        <item name="android:textSize">16sp</item>
+
+    </style>
+
+    <style name="CustomShapeAppearance">
+        <item name="neumorph_cornerFamily">rounded</item>
+        <item name="neumorph_cornerSize">16dp</item>
+    </style>
+
+    <style name="ToastTheme">
+        <item name="stTextBold">false</item>
+        <item name="stTextColor">@color/colorPrimaryDark</item>
+        <item name="stFont">@font/mregular</item>
+        <item name="stTextSize">14sp</item>
+        <item name="stColorBackground">@color/colorAccent</item>
+        <item name="stSolidBackground">false</item>
+        <item name="stStrokeWidth">1dp</item>
+        <item name="stStrokeColor">@color/colorPrimaryDark</item>
+        <item name="stLength">LONG</item>
+        <item name="stGravity">top</item>
+        <item name="stRadius">5dp</item>
+    </style>
+
+
+</resources>

@@ -1,0 +1,104 @@
+<resources>
+    <string name="app_name">Home Controller</string>
+
+    <string name="timeout">** Timeout **</string>
+
+    <!--On Activity Login & Contact Us-->
+    <string name="login_need_help">Need help?</string>
+    <string name="login_qr_code_doesnt_match">QR code doesn\'t match</string>
+    <string name="login_no_result_found">No result found</string>
+    <string name="login_main_connecting">Connecting....</string>
+    <string name="login_scan_qr_code">Scan QR Code</string>
+    <string name="login_point_the_camera_at_your_qr_code">Point the camera at your QR code</string>
+    <string name="contact_title_contact">CONTACT</string>
+    <string name="contact_text_content">If you need assistance, please contact us by clicking the button below</string>
+    <string name="login_contact_us_email_us">Email us</string>
+    <string name="login_contact_us_please_wait_a_moment">Please wait a moment…</string>
+    <string name="login_contact_us_send_email">Send email…</string>
+    <string name="login_contact_us_catch_no_email">There is no email client installed</string>
+
+    <!--On Activity Main-->
+    <string name="main_title_home">HOME</string>
+    <string name="main_title_controller">CONTROLLER</string>
+    <string name="main_help_connected">Connected</string>
+    <string name="main_help_disconnected">Disconnected</string>
+    <string name="main_switch_1">Switch 1</string>
+    <string name="main_switch_2">Switch 2</string>
+    <string name="main_switch_3">Switch 3</string>
+    <string name="main_switch_4">Switch 4</string>
+    <string name="main_on">On</string>
+    <string name="main_off">Off</string>
+    <string name="main_help_all">All</string>
+    <string name="main_voice_mode">Voice Mode</string>
+    <string name="main_dont_support_voice_mode">Your Device Don\'t Support Speech Input</string>
+    <string name="main_ly_disconnected_content">Internet not available, cross check your internet connectivity and try again</string>
+    <string name="main_toast_switch">Switch</string>
+    <string name="main_toast_success_active">has been activated successfully</string>
+    <string name="main_toast_failed_active">failed to activate</string>
+    <string name="main_toast_success_nonactive">has been disabled successfully</string>
+    <string name="main_toast_failed_nonactive">failed to be disabled</string>
+    <string name="main_toast_all_active">All switches activated successfully</string>
+    <string name="main_toast_all_nonactive">All switches have been disabled successfully</string>
+    <string name="main_toast_unknown_command">Unknown command</string>
+    <string name="todo">TODO</string>
+
+    <!--On Activity Help-->
+    <string name="help_title_help">HELP</string>
+    <string name="help_connection">CONNECTION</string>
+    <string name="help_device">Device</string>
+    <string name="help_device_content">If the device (ESP) is successfully connected to the internet network and is active, then a yellow sign will appear and continue to flash with different time delays at the internet network speed.</string>
+    <string name="help_device_content_2">However, if the yellow sign does not appear and does not flash for a relatively long time, up to 2 minutes, it indicates that the device (ESP) is inactive and not connected to the internet.</string>
+    <string name="help_footer_content">Applications and devices\nrequire an internet network\nto work optimally.</string>
+    <string name="help_disconnected_content">If this application fails to connect to the internet network, a red sign will appear.</string>
+    <string name="help_connected_content">If this application is successfully connected to the internet network, a green sign will appear.</string>
+    <string name="help_voice_mode_command">VOICE MODE\nCOMMAND</string>
+    <string name="help_command_to_disable_the_switch">Disable switches</string>
+    <string name="help_command_to_activate_the_switch">Activating switches</string>
+    <string name="help_keyword_all_active">Semua sakelar aktif</string>
+    <string name="help_keyword_specific_active">Sakelar (switch number) aktif</string>
+    <string name="help_sayings_example">Sayings example : </string>
+    <string name="help_specific">Specific</string>
+    <string name="help_example_content_active">Sakelar satu aktif</string>
+    <string name="help_keyword_all_nonactive">Semua sakelar nonaktif</string>
+    <string name="help_keyword_specific_nonactive">Sakelar (switch number) nonaktif</string>
+    <string name="help_example_content_nonactive">Sakelar satu nonaktif</string>
+
+    <!--Menu Option -->
+    <string name="menu_contact_us">Contact Us</string>
+    <string name="menu_help">Help</string>
+    <string name="menu_language">Language</string>
+    <string name="contact_copyright_2020">2020</string>
+    <string name="timer">Timer</string>
+
+    <string name="timer_text_state_switch_nonactive">The timer hasn\'t been activated</string>
+    <string name="timer_text_state_switch_active">The timer has been activated</string>
+
+
+    <string name="msg_notification_switch_on_1">Switch 1 is Active</string>
+    <string name="msg_notification_switch_off_1">Switch 1 is Inactive</string>
+    <string name="msg_notification_switch_on_2">Switch 2 is Active</string>
+    <string name="msg_notification_switch_off_2">Switch 2 is Inactive</string>
+    <string name="msg_notification_switch_on_3">Switch 3 is Active</string>
+    <string name="msg_notification_switch_off_3">Switch 3 is Inactive</string>
+    <string name="msg_notification_switch_on_4">Switch 4 is Active</string>
+    <string name="msg_notification_switch_off_4">Switch 1 is Inactive</string>
+
+    <string name="msg_timer_empty">The time has not been set, please set the time in advance</string>
+    <string name="msg_notification_service">The timer is running…</string>
+
+    <string name="msg_timer_switch_1">The timer for switch 1 is activated</string>
+    <string name="msg_timer_switch_2">The timer for switch 2 is activated</string>
+    <string name="msg_timer_switch_3">The timer for switch 3 is activated</string>
+    <string name="msg_timer_switch_4">The timer for switch 4 is activated</string>
+
+    <string name="msg_timer_switch_1_disabled">The timer for switch 1 is disabled</string>
+    <string name="msg_timer_switch_2_disabled">The timer for switch 2 is disabled</string>
+    <string name="msg_timer_switch_3_disabled">The timer for switch 3 is disabled</string>
+    <string name="msg_timer_switch_4_disabled">The timer for switch 4 is disabled</string>
+    <string name="timer_title_timer">TIMER</string>
+    <string name="timer_active_at">Active at</string>
+    <string name="timer_off_at">Off at</string>
+    <string name="timer_warning_text">Using this feature will drain your battery</string>
+
+
+</resources>

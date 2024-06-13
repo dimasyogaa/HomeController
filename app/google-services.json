@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "405039993822",
+    "firebase_url": "https://smarthomekita8.firebaseio.com",
+    "project_id": "smarthomekita8",
+    "storage_bucket": "smarthomekita8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:405039993822:android:ab82221d1c95dee2c8834f",
+        "android_client_info": {
+          "package_name": "com.yogadimas.homecontroller"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "405039993822-j7fjaponkq6idam92kiuj30o8kd8etvv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCjmu-zfoCHsM5datxZKNdhmrrULGI2HVA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "405039993822-j7fjaponkq6idam92kiuj30o8kd8etvv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

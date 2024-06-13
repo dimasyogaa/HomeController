@@ -1,0 +1,59 @@
+apply plugin: 'com.android.application'
+apply plugin: 'com.google.gms.google-services'
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "30.0.0"
+
+    defaultConfig {
+        applicationId "com.yogadimas.homecontroller"
+        minSdkVersion 21
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        buildConfigField("String", "BASE_URL_FIREBASE_QR_CODE", "\"https://smarthomekita8.firebaseio.com/code\"")
+        buildConfigField("String", "BASE_URL_FIREBASE", "\"https://smarthomekita8.firebaseio.com/\"")
+        buildConfigField("String", "BASE_URL_EMAIL_US", "\"homecontroller@protonmail.com\"")
+        buildConfigField("String", "KEY_QR_CODE", "\"code\"")
+        buildConfigField("String", "CONNECT_DEVICE", "\"connectdevice\"")
+        buildConfigField("String", "CONNECT_FIREBASE", "\"connectfirebase\"")
+        buildConfigField("String", "CONNECT_APP", "\"connectapp\"")
+        buildConfigField("String", "RELAY1", "\"relay1on\"")
+        buildConfigField("String", "RELAY2", "\"relay2on\"")
+        buildConfigField("String", "RELAY3", "\"relay3on\"")
+        buildConfigField("String", "RELAY4", "\"relay4on\"")
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'com.github.fornewid:neumorphism:0.1.11'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    implementation 'com.google.android.material:material:1.2.1'
+    implementation 'me.dm7.barcodescanner:zxing:1.9'
+    implementation 'com.journeyapps:zxing-android-embedded:3.6.0@aar'
+    implementation 'com.google.zxing:core:3.3.3'
+    implementation 'com.google.firebase:firebase-database:19.5.1'
+
+    implementation 'com.github.stealthcopter:AndroidNetworkTools:0.4.5.3'
+
+    implementation 'com.muddzdev:styleabletoast:2.2.4'
+
+    //mengakses sebagai client
+    implementation 'com.firebase:firebase-client-android:2.4.0'
+    testImplementation 'junit:junit:4.13.1'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+
+}

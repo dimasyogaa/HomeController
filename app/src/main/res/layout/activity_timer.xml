@@ -1,0 +1,946 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/whiteThird"
+    tools:context=".activity.TimerActivity">
+
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:scrollbars="none"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="24dp">
+
+            <ImageView
+                android:id="@+id/btn_back"
+                android:layout_marginStart="@dimen/range_16dp"
+                android:layout_marginTop="24dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/ic_back"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <soup.neumorphism.NeumorphTextView
+                android:id="@+id/neumorphTextView"
+                style="@style/Widget.Neumorph.TextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/mbold"
+                android:text="@string/timer_title_timer"
+                android:textAlignment="center"
+                android:textColor="@color/whiteThird"
+                android:textSize="36sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_warning_timer"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="8dp"
+                android:fontFamily="@font/mlight"
+                android:gravity="center"
+                android:text="@string/timer_warning_text"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/neumorphTextView" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/ly_warning_timer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_warning_timer">
+
+                <TextView
+                    android:id="@+id/tv_switch_timer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/mmedium"
+                    android:text="@string/timer"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="16sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <Switch
+                    android:id="@+id/sw_timer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/range_16dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:scaleX="1.5"
+                    android:scaleY="1.5"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/tv_switch_timer"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+
+                <TextView
+                    android:id="@+id/tv_state_switch_timer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/range_16dp"
+                    android:fontFamily="@font/mregular"
+                    android:textSize="16sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/sw_timer"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="Off" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/ly_switch_all"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginEnd="4dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ly_warning_timer">
+
+                <LinearLayout
+                    android:id="@+id/ly_switch1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_round"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:padding="@dimen/range_16dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <LinearLayout
+                            android:id="@+id/linearLayout11"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:weightSum="2"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="start|center"
+                                android:orientation="horizontal"
+                                android:weightSum="3">
+
+                                <soup.neumorphism.NeumorphImageView
+                                    android:id="@+id/btn_switch_on_1"
+                                    style="@style/Widget.Neumorph.ImageView"
+                                    android:layout_width="90dp"
+                                    android:layout_height="90dp"
+                                    android:layout_gravity="center"
+                                    android:scaleType="centerInside"
+                                    android:src="@drawable/ic_timer"
+                                    app:neumorph_shapeAppearance="@style/CustomShapeAppearance" />
+
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="3"
+                                    android:orientation="vertical"
+                                    tools:ignore="NestedWeights">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/mregular"
+                                        android:text="@string/timer_active_at"
+                                        android:textColor="@color/colorPrimaryDark"
+                                        android:textSize="16sp" />
+
+
+                                    <TextView
+                                        android:id="@+id/tv_switch_on_1"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/mregular"
+                                        android:textColor="@color/colorPrimaryDark"
+                                        android:textSize="18sp"
+                                        tools:text="00 : 00" />
+
+
+                                </LinearLayout>
+
+                                <soup.neumorphism.NeumorphImageView
+                                    android:id="@+id/btn_clear_on_1"
+                                    style="@style/Widget.Neumorph.ImageView"
+                                    android:layout_width="65dp"
+                                    android:layout_height="65dp"
+                                    android:layout_gravity="center|end"
+                                    android:layout_weight="0"
+                                    android:scaleType="centerInside"
+                                    android:src="@drawable/ic_cross"
+                                    app:neumorph_shapeAppearance="@style/CustomShapeAppearance" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="start|center"
+                                android:orientation="horizontal"
+                                android:weightSum="3">
+
+                                <soup.neumorphism.NeumorphImageView
+                                    android:id="@+id/btn_switch_off_1"
+                                    style="@style/Widget.Neumorph.ImageView"
+                                    android:layout_width="90dp"
+                                    android:layout_height="90dp"
+                                    android:layout_gravity="center"
+                                    android:layout_weight="0"
+                                    android:scaleType="centerInside"
+                                    android:src="@drawable/ic_timer"
+                                    app:neumorph_shapeAppearance="@style/CustomShapeAppearance"
+                                    tools:ignore="NestedWeights" />
+
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="3"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/mregular"
+                                        android:text="@string/timer_off_at"
+                                        android:textColor="@color/colorPrimaryDark"
+                                        android:textSize="16sp" />
+
+                                    <TextView
+                                        android:id="@+id/tv_switch_off_1"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/mregular"
+                                        android:textColor="@color/colorPrimaryDark"
+                                        android:textSize="18sp"
+                                        tools:text="00 : 00" />
+
+
+                                </LinearLayout>
+
+
+                                <soup.neumorphism.NeumorphImageView
+                                    android:id="@+id/btn_clear_off_1"
+                                    style="@style/Widget.Neumorph.ImageView"
+                                    android:layout_width="65dp"
+                                    android:layout_height="65dp"
+                                    android:layout_gravity="center|end"
+                                    android:layout_weight="0"
+                                    android:scaleType="centerInside"
+                                    android:src="@drawable/ic_cross"
+                                    app:neumorph_shapeAppearance="@style/CustomShapeAppearance" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="8dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/linearLayout11">
+
+                            <TextView
+                                android:id="@+id/tv_switch_1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/mmedium"
+                                android:text="@string/main_switch_1"
+                                android:textColor="@color/colorPrimaryDark"
+                                android:textSize="16sp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <Switch
+                                android:id="@+id/sw_1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/range_16dp"
+                                android:layout_marginTop="8dp"
+                                android:layout_marginBottom="8dp"
+                                android:scaleX="1.5"
+                                android:scaleY="1.5"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toEndOf="@+id/tv_switch_1"
+                                app:layout_constraintTop_toTopOf="parent"
+                                tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+
+                            <TextView
+                                android:id="@+id/tv_state_switch1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/range_16dp"
+                                android:fontFamily="@font/mregular"
+                                android:textSize="16sp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toEndOf="@+id/sw_1"
+                                app:layout_constraintTop_toTopOf="parent"
+                                tools:text="Off" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ly_switch2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginEnd="8dp"
+                    android:background="@drawable/bg_round"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical"
+                    android:padding="@dimen/range_16dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/ly_switch1">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <LinearLayout
+                            android:id="@+id/linearLayout22"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:weightSum="2"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="start|center"
+                                android:orientation="horizontal"
+                                android:weightSum="3">
+
+                                <soup.neumorphism.NeumorphImageView
+                                    android:id="@+id/btn_switch_on_2"
+                                    style="@style/Widget.Neumorph.ImageView"
+                                    android:layout_width="90dp"
+                                    android:layout_height="90dp"
+                                    android:layout_gravity="center"
+                                    android:scaleType="centerInside"
+                                    android:src="@drawable/ic_timer"
+                                    app:neumorph_shapeAppearance="@style/CustomShapeAppearance" />
+
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="3"
+                                    android:orientation="vertical"
+                                    tools:ignore="NestedWeights">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/mregular"
+                                        android:text="@string/timer_active_at"
+                                        android:textColor="@color/colorPrimaryDark"
+                                        android:textSize="16sp" />
+
+
+                                    <TextView
+                                        android:id="@+id/tv_switch_on_2"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/mregular"
+                                        android:textColor="@color/colorPrimaryDark"
+                                        android:textSize="18sp"
+                                        tools:text="00 : 00" />
+
+
+                                </LinearLayout>
+
+                                <soup.neumorphism.NeumorphImageView
+                                    android:id="@+id/btn_clear_on_2"
+                                    style="@style/Widget.Neumorph.ImageView"
+                                    android:layout_width="65dp"
+                                    android:layout_height="65dp"
+                                    android:layout_gravity="center|end"
+                                    android:layout_weight="0"
+                                    android:scaleType="centerInside"
+                                    android:src="@drawable/ic_cross"
+                                    app:neumorph_shapeAppearance="@style/CustomShapeAppearance" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="start|center"
+                                android:orientation="horizontal"
+                                android:weightSum="3">
+
+                                <soup.neumorphism.NeumorphImageView
+                                    android:id="@+id/btn_switch_off_2"
+                                    style="@style/Widget.Neumorph.ImageView"
+                                    android:layout_width="90dp"
+                                    android:layout_height="90dp"
+                                    android:layout_gravity="center"
+                                    android:layout_weight="0"
+                                    android:scaleType="centerInside"
+                                    android:src="@drawable/ic_timer"
+                                    app:neumorph_shapeAppearance="@style/CustomShapeAppearance"
+                                    tools:ignore="NestedWeights" />
+
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="3"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/mregular"
+                                        android:text="@string/timer_off_at"
+                                        android:textColor="@color/colorPrimaryDark"
+                                        android:textSize="16sp" />
+
+                                    <TextView
+                                        android:id="@+id/tv_switch_off_2"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/mregular"
+                                        android:textColor="@color/colorPrimaryDark"
+                                        android:textSize="18sp"
+                                        tools:text="00 : 00" />
+
+
+                                </LinearLayout>
+
+
+                                <soup.neumorphism.NeumorphImageView
+                                    android:id="@+id/btn_clear_off_2"
+                                    style="@style/Widget.Neumorph.ImageView"
+                                    android:layout_width="65dp"
+                                    android:layout_height="65dp"
+                                    android:layout_gravity="center|end"
+                                    android:layout_weight="0"
+                                    android:scaleType="centerInside"
+                                    android:src="@drawable/ic_cross"
+                                    app:neumorph_shapeAppearance="@style/CustomShapeAppearance" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="8dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/linearLayout22">
+
+                            <TextView
+                                android:id="@+id/tv_switch_2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/mmedium"
+                                android:text="@string/main_switch_2"
+                                android:textColor="@color/colorPrimaryDark"
+                                android:textSize="16sp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <Switch
+                                android:id="@+id/sw_2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/range_16dp"
+                                android:layout_marginTop="8dp"
+                                android:layout_marginBottom="8dp"
+                                android:scaleX="1.5"
+                                android:scaleY="1.5"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toEndOf="@+id/tv_switch_2"
+                                app:layout_constraintTop_toTopOf="parent"
+                                tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+
+                            <TextView
+                                android:id="@+id/tv_state_switch2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/range_16dp"
+                                android:fontFamily="@font/mregular"
+                                android:textSize="16sp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toEndOf="@+id/sw_2"
+                                app:layout_constraintTop_toTopOf="parent"
+                                tools:text="Off" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ly_switch3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginEnd="8dp"
+                    android:background="@drawable/bg_round"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical"
+                    android:padding="@dimen/range_16dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/ly_switch2">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <LinearLayout
+                            android:id="@+id/linearLayout33"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:weightSum="2"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="start|center"
+                                android:orientation="horizontal"
+                                android:weightSum="3">
+
+                                <soup.neumorphism.NeumorphImageView
+                                    android:id="@+id/btn_switch_on_3"
+                                    style="@style/Widget.Neumorph.ImageView"
+                                    android:layout_width="90dp"
+                                    android:layout_height="90dp"
+                                    android:layout_gravity="center"
+                                    android:scaleType="centerInside"
+                                    android:src="@drawable/ic_timer"
+                                    app:neumorph_shapeAppearance="@style/CustomShapeAppearance" />
+
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="3"
+                                    android:orientation="vertical"
+                                    tools:ignore="NestedWeights">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/mregular"
+                                        android:text="@string/timer_active_at"
+                                        android:textColor="@color/colorPrimaryDark"
+                                        android:textSize="16sp" />
+
+
+                                    <TextView
+                                        android:id="@+id/tv_switch_on_3"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/mregular"
+                                        android:textColor="@color/colorPrimaryDark"
+                                        android:textSize="18sp"
+                                        tools:text="00 : 00" />
+
+
+                                </LinearLayout>
+
+                                <soup.neumorphism.NeumorphImageView
+                                    android:id="@+id/btn_clear_on_3"
+                                    style="@style/Widget.Neumorph.ImageView"
+                                    android:layout_width="65dp"
+                                    android:layout_height="65dp"
+                                    android:layout_gravity="center|end"
+                                    android:layout_weight="0"
+                                    android:scaleType="centerInside"
+                                    android:src="@drawable/ic_cross"
+                                    app:neumorph_shapeAppearance="@style/CustomShapeAppearance" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="start|center"
+                                android:orientation="horizontal"
+                                android:weightSum="3">
+
+                                <soup.neumorphism.NeumorphImageView
+                                    android:id="@+id/btn_switch_off_3"
+                                    style="@style/Widget.Neumorph.ImageView"
+                                    android:layout_width="90dp"
+                                    android:layout_height="90dp"
+                                    android:layout_gravity="center"
+                                    android:layout_weight="0"
+                                    android:scaleType="centerInside"
+                                    android:src="@drawable/ic_timer"
+                                    app:neumorph_shapeAppearance="@style/CustomShapeAppearance"
+                                    tools:ignore="NestedWeights" />
+
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="3"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/mregular"
+                                        android:text="@string/timer_off_at"
+                                        android:textColor="@color/colorPrimaryDark"
+                                        android:textSize="16sp" />
+
+                                    <TextView
+                                        android:id="@+id/tv_switch_off_3"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/mregular"
+                                        android:textColor="@color/colorPrimaryDark"
+                                        android:textSize="18sp"
+                                        tools:text="00 : 00" />
+
+
+                                </LinearLayout>
+
+
+                                <soup.neumorphism.NeumorphImageView
+                                    android:id="@+id/btn_clear_off_3"
+                                    style="@style/Widget.Neumorph.ImageView"
+                                    android:layout_width="65dp"
+                                    android:layout_height="65dp"
+                                    android:layout_gravity="center|end"
+                                    android:layout_weight="0"
+                                    android:scaleType="centerInside"
+                                    android:src="@drawable/ic_cross"
+                                    app:neumorph_shapeAppearance="@style/CustomShapeAppearance" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="8dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/linearLayout33">
+
+                            <TextView
+                                android:id="@+id/tv_switch_3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/mmedium"
+                                android:text="@string/main_switch_3"
+                                android:textColor="@color/colorPrimaryDark"
+                                android:textSize="16sp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <Switch
+                                android:id="@+id/sw_3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/range_16dp"
+                                android:layout_marginTop="8dp"
+                                android:layout_marginBottom="8dp"
+                                android:scaleX="1.5"
+                                android:scaleY="1.5"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toEndOf="@+id/tv_switch_3"
+                                app:layout_constraintTop_toTopOf="parent"
+                                tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+
+                            <TextView
+                                android:id="@+id/tv_state_switch3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/range_16dp"
+                                android:fontFamily="@font/mregular"
+                                android:textSize="16sp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toEndOf="@+id/sw_3"
+                                app:layout_constraintTop_toTopOf="parent"
+                                tools:text="Off" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ly_switch4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginEnd="8dp"
+                    android:background="@drawable/bg_round"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical"
+                    android:padding="@dimen/range_16dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/ly_switch3">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <LinearLayout
+                            android:id="@+id/linearLayout44"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:weightSum="2"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="start|center"
+                                android:orientation="horizontal"
+                                android:weightSum="3">
+
+                                <soup.neumorphism.NeumorphImageView
+                                    android:id="@+id/btn_switch_on_4"
+                                    style="@style/Widget.Neumorph.ImageView"
+                                    android:layout_width="90dp"
+                                    android:layout_height="90dp"
+                                    android:layout_gravity="center"
+                                    android:scaleType="centerInside"
+                                    android:src="@drawable/ic_timer"
+                                    app:neumorph_shapeAppearance="@style/CustomShapeAppearance" />
+
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="3"
+                                    android:orientation="vertical"
+                                    tools:ignore="NestedWeights">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/mregular"
+                                        android:text="@string/timer_active_at"
+                                        android:textColor="@color/colorPrimaryDark"
+                                        android:textSize="16sp" />
+
+
+                                    <TextView
+                                        android:id="@+id/tv_switch_on_4"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/mregular"
+                                        android:textColor="@color/colorPrimaryDark"
+                                        android:textSize="18sp"
+                                        tools:text="00 : 00" />
+
+
+                                </LinearLayout>
+
+                                <soup.neumorphism.NeumorphImageView
+                                    android:id="@+id/btn_clear_on_4"
+                                    style="@style/Widget.Neumorph.ImageView"
+                                    android:layout_width="65dp"
+                                    android:layout_height="65dp"
+                                    android:layout_gravity="center|end"
+                                    android:layout_weight="0"
+                                    android:scaleType="centerInside"
+                                    android:src="@drawable/ic_cross"
+                                    app:neumorph_shapeAppearance="@style/CustomShapeAppearance" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="start|center"
+                                android:orientation="horizontal"
+                                android:weightSum="3">
+
+                                <soup.neumorphism.NeumorphImageView
+                                    android:id="@+id/btn_switch_off_4"
+                                    style="@style/Widget.Neumorph.ImageView"
+                                    android:layout_width="90dp"
+                                    android:layout_height="90dp"
+                                    android:layout_gravity="center"
+                                    android:layout_weight="0"
+                                    android:scaleType="centerInside"
+                                    android:src="@drawable/ic_timer"
+                                    app:neumorph_shapeAppearance="@style/CustomShapeAppearance"
+                                    tools:ignore="NestedWeights" />
+
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="3"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/mregular"
+                                        android:text="@string/timer_off_at"
+                                        android:textColor="@color/colorPrimaryDark"
+                                        android:textSize="16sp" />
+
+                                    <TextView
+                                        android:id="@+id/tv_switch_off_4"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/mregular"
+                                        android:textColor="@color/colorPrimaryDark"
+                                        android:textSize="18sp"
+                                        tools:text="00 : 00" />
+
+
+                                </LinearLayout>
+
+
+                                <soup.neumorphism.NeumorphImageView
+                                    android:id="@+id/btn_clear_off_4"
+                                    style="@style/Widget.Neumorph.ImageView"
+                                    android:layout_width="65dp"
+                                    android:layout_height="65dp"
+                                    android:layout_gravity="center|end"
+                                    android:layout_weight="0"
+                                    android:scaleType="centerInside"
+                                    android:src="@drawable/ic_cross"
+                                    app:neumorph_shapeAppearance="@style/CustomShapeAppearance" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="8dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/linearLayout44">
+
+                            <TextView
+                                android:id="@+id/tv_switch_4"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/mmedium"
+                                android:text="@string/main_switch_4"
+                                android:textColor="@color/colorPrimaryDark"
+                                android:textSize="16sp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <Switch
+                                android:id="@+id/sw_4"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/range_16dp"
+                                android:layout_marginTop="8dp"
+                                android:layout_marginBottom="8dp"
+                                android:scaleX="1.5"
+                                android:scaleY="1.5"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toEndOf="@+id/tv_switch_4"
+                                app:layout_constraintTop_toTopOf="parent"
+                                tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+
+                            <TextView
+                                android:id="@+id/tv_state_switch4"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/range_16dp"
+                                android:fontFamily="@font/mregular"
+                                android:textSize="16sp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toEndOf="@+id/sw_4"
+                                app:layout_constraintTop_toTopOf="parent"
+                                tools:text="Off" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </LinearLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
